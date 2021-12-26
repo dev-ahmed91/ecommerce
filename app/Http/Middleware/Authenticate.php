@@ -2,7 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use http\Env\Request;
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+
 
 class Authenticate extends Middleware
 {
@@ -14,8 +16,13 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+
         if (! $request->expectsJson()) {
-            return route('login');
+            // check if the route prefix is dashboard
+            if($request->is('dashboard/*'))
+                return route('admin.login');
+            else
+                return route('login');
         }
     }
 }

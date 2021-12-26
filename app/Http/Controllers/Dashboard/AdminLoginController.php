@@ -6,30 +6,24 @@ use App\Models\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Requests\AdminAuthRequest;
-use Illuminate\Support\Facades\DB;
+use App\Http\Requests\AdminLoginRequest;
 
 
 class AdminLoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
+
 
     public function showLoginForm()
     {
-        return DB::table("admins")->get();
-        return view('dashboard.login');
+        return view('dashboard.auth.login');
     }
 
     //
-    public function authenticate(AdminAuthRequest $request)
+    public function authenticate(AdminLoginRequest $request)
     {
-
-        if(Auth::guard("admin")->attempt(['email' => $request->email,'password'=>$request->password,"admin_type_id"=>1])){
+        $remember = $request->has("remember_me") ? True : False;
+        if(Auth::guard("admin")->attempt(['email'=>$request->email,'password'=>$request->password],$remember)){
             return redirect()->route('admin.home');
-            //return redirect(adminUrl('category/create'));
         }
 
         else

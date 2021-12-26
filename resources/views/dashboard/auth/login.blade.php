@@ -10,8 +10,8 @@
 <!-- Favicon-->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- Custom Css -->
-<link rel="stylesheet" href="{{asset("dashboard/plugins/bootstrap/css/bootstrap.min.css")}}">
-<link rel="stylesheet" href="{{asset("dashboard/css/style.min.css")}}">
+<link rel="stylesheet" href="{{asset("assets/dashboard/plugins/bootstrap/css/bootstrap.min.css")}}">
+<link rel="stylesheet" href="{{asset("assets/dashboard/css/style.min.css")}}">
 </head>
 
 <body class="theme-blush">
@@ -24,7 +24,7 @@
                 <form class="card auth_form" method="post" action="{{route('admin.authenticate')}}">
                     @csrf
                     <div class="header">
-                        <img class="logo" src="{{asset("dashboard/images/logo.svg")}}" alt="">
+                        <img class="logo" src="{{asset("assets/dashboard/images/logo.svg")}}" alt="">
                         <h5>Log in</h5>
                     </div>
                     <div class="body">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <div class="checkbox">
-                            <input id="remember_me" type="checkbox">
+                            <input id="remember_me" name="remember_me" type="checkbox">
                             <label for="remember_me">Remember Me</label>
                         </div>
                         <input type="submit" class="btn btn-primary btn-block waves-effect waves-light" value="SIGN IN">
@@ -55,7 +55,7 @@
             </div>
             <div class="col-lg-8 col-sm-12">
                 <div class="card">
-                    <img src="{{asset("dashboard/images/signin.svg")}}" alt="Sign In"/>
+                    <img src="{{asset("assets/dashboard/images/signin.svg")}}" alt="Sign In"/>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
 </div>
 
 <!-- Jquery Core Js -->
-<script src="{{asset("dashboard/bundles/libscripts.bundle.js")}}"></script>
-<script src="{{asset("dashboard/bundles/vendorscripts.bundle.js")}}"></script> <!-- Lib Scripts Plugin Js -->
+<script src="{{asset("assets/dashboard/bundles/libscripts.bundle.js")}}"></script>
+<script src="{{asset("assets/dashboard/bundles/vendorscripts.bundle.js")}}"></script> <!-- Lib Scripts Plugin Js -->
 </body>
 </html>

@@ -19,6 +19,8 @@ class Admin extends Authenticatable
         'name', 'email', 'password',
     ];
 
+    public $timestamps = True;
+
     /**
      * The attributes that should be hidden for arrays.
      *

@@ -2,7 +2,7 @@
 
 Route::group([
                 "prefix"=>"dashboard",
-                //"middleware"=>["auth:admin"]
+                "middleware"=>["auth:admin"]
              ],
     function(){
 
@@ -11,7 +11,13 @@ Route::group([
 });
 
 // Admin Login And Logout Routes
-Route::get("dashboard/login","AdminLoginController@showLoginForm")->name("admin.login");
-Route::post("dashboard/login","AdminLoginController@authenticate")->name("admin.authenticate");
-Route::get("dashboard/logout","AdminLoginController@logout")->name("admin.logout");
+
+Route::group(["prefix"=>"dashboard"], function(){
+
+        Route::get("login","AdminLoginController@showLoginForm")->name("admin.login")->middleware('guest:admin');
+        Route::post("login","AdminLoginController@authenticate")->name("admin.authenticate");
+        Route::get("logout","AdminLoginController@logout")->name("admin.logout");
+
+    });
+
 
