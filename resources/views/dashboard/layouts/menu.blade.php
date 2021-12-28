@@ -27,18 +27,10 @@
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Categories</span></a>
                 <ul class="ml-menu">
                     {{-- <li><a href="{{route('category.create')}}">Add New Category</a></li> --}}
-                    <li><a href="taskboard.html">Taskboard</a></li>
-                    <li><a href="ticket-list.html">Ticket List</a></li>
-                    <li><a href="ticket-detail.html">Ticket Detail</a></li>
                 </ul>
             </li>
-            <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-folder"></i><span>File Manager</span></a>
-                <ul class="ml-menu">
-                    <li><a href="file-dashboard.html">All File</a></li>
-                    <li><a href="file-documents.html">Documents</a></li>
-                    <li><a href="file-images.html">Images</a></li>
-                    <li><a href="file-media.html">Media</a></li>
-                </ul>
+            <li>
+                <a href="{{route('settings.index')}}" ><i class="zmdi zmdi-settings"></i><span>Setting</span></a>
             </li>
             <li> <a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-blogger"></i><span>Blog</span></a>
                 <ul class="ml-menu">

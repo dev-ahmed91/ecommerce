@@ -8,6 +8,12 @@ Route::group([
 
     Route::get("/home","AdminHomeController@index")->name("admin.home");
 
+    /* Setting Page*/
+    Route::get("/setting","SettingController@index")->name("settings.index");
+
+    /* Shipping Methods */
+    Route::resource("shippingMethod","shippingMethodController");
+
 });
 
 // Admin Login And Logout Routes
